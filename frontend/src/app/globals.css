@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* 🎨 สีเดิมของ CIMS (Themes/Colors.xaml) */
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --surface-2: #f4f4f9;
+  --ink: #1a1c1e;
+  --ink-soft: #5f5b66;
+  --line: #e3e1e8;
+  --primary: #49454f;
+  --primary-dark: #332f38;
+  --accent: #6750a4;
+  --accent-soft: #d0bcff;
+  --success: #2e7d32;
+  --danger: #c62828;
+  --warning: #ef6c00;
+  --info: #1976d2;
+  --teal: #00897b;
+  --return: #0288d1;
+  --scanout: #7b1fa2;
+  /* Sidebar: #1C1C1E ความเข้ม 95% */
+  --sidebar: rgba(28, 28, 30, 0.95);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-teal: var(--teal);
+  --color-return: var(--return);
+  --color-scanout: var(--scanout);
+  --color-sidebar: var(--sidebar);
+  --font-sans: var(--font-thai), ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* ตารางในหน้าระบบ: ตัวหนาแบบเดิม อ่านง่ายบนจอหน้างาน */
+.data-table th {
+  @apply bg-primary text-white text-xs font-bold uppercase tracking-wide px-3 py-2 text-left whitespace-nowrap;
+}
+.data-table td {
+  @apply px-3 py-2 text-sm font-semibold border-b border-line align-middle;
+}
+.data-table tbody tr:hover {
+  @apply bg-surface-2;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-bold text-white shadow-sm transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-surface px-4 py-2 text-sm font-bold text-ink transition hover:bg-surface-2 disabled:opacity-50;
+}
+.field {
+  @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm font-semibold text-ink outline-none focus:border-accent focus:ring-2 focus:ring-accent-soft;
+}
